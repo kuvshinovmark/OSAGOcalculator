@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>img/Icon.png</file>
+        <file>img/error.png</file>
+    </qresource>
+    <qresource prefix="/information">
+        <file>data/ForKM.txt</file>
+        <file>data/ForKC.txt</file>
+        <file>data/ForKT.txt</file>
+        <file>data/ForKBM.txt</file>
+        <file>data/ForKBC.txt</file>
+    </qresource>
+</RCC>

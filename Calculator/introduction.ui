@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Introduction</class>
+ <widget class="QDialog" name="Introduction">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>599</width>
+    <height>385</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #e6ebff;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">font: 16px Verdana;
+color: #335e89;</string>
+     </property>
+     <property name="text">
+      <string>&lt;style&gt;
+h1{
+font:Verdana;
+font-weight:500;
+}
+p{
+
+}
+&lt;/style&gt;
+
+
+&lt;h1 align=&quot;center&quot;&gt;Calculator OSAGO&lt;/h1&gt;&lt;br&gt;
+&lt;p align=&quot;center&quot;&gt;Для подсчета стоимости страховки OSAGO&lt;br&gt;вам необходимо ввести данные для расчета коэффициентов,&lt;br&gt; для вашего удобства в полях ввода представлены примеры данных.&lt;br&gt;После ввода приложение подсчитает вам стоимость страховки. &lt;/p&gt;
+</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true">background-color: #89a3bc;
+border-radius: 10px;
+height: 50px;
+color: #e6ebff;
+font: 16px Verdana;
+</string>
+     </property>
+     <property name="text">
+      <string>Мы ознакомились!</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

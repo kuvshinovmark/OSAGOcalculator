@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>934</width>
+    <height>516</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #e6ebff;
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="font">
+       <font>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="ControlSumma">
+         <property name="styleSheet">
+          <string notr="true">font: 16px Verdana;
+color: #335e89;</string>
+         </property>
+         <property name="text">
+          <string>Контрольная сумма</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="ChecksumExplanation">
+         <property name="styleSheet">
+          <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:12px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt;&quot;&gt;Пояснение контрольной суммы &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QPushButton" name="ButtonForErasing">
+           <property name="styleSheet">
+            <string notr="true">background-color: #89a3bc;
+border-radius: 7px;
+height: 30px;
+color: #e6ebff;
+font: 16px Verdana;
+</string>
+           </property>
+           <property name="text">
+            <string>Обновление</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="ButtonForCount">
+           <property name="styleSheet">
+            <string notr="true">background-color: #89a3bc;
+border-radius: 7px;
+height: 30px;
+color: #e6ebff;
+font: 16px Verdana;
+</string>
+           </property>
+           <property name="text">
+            <string>Подсчет</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="Layout_BT">
+         <item>
+          <widget class="QLabel" name="LabelBT">
+           <property name="styleSheet">
+            <string notr="true">font: 14px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string>Начальный тариф (BT)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="LineBT">
+           <property name="styleSheet">
+            <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>2700</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Layout_KT">
+         <item>
+          <widget class="QLabel" name="LabelKT">
+           <property name="styleSheet">
+            <string notr="true">font: 14px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string>Территория (КТ) </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="LineKT">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="placeholderText">
+            <string>Moscow</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Layout_KBM_Now">
+         <item>
+          <widget class="QLabel" name="LabelKBM_Now">
+           <property name="styleSheet">
+            <string notr="true">font: 14px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string>КБМ в данный момент (КБМ)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="LineKBM_Now">
+           <property name="styleSheet">
+            <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="placeholderText">
+            <string>0.65</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Layout_KBM_Koll">
+         <item>
+          <widget class="QLabel" name="LabelKBM_Koll">
+           <property name="styleSheet">
+            <string notr="true">font: 14px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string>Количество страховых возмещений (КБМ)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="LineKBM_Koll">
+           <property name="styleSheet">
+            <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="placeholderText">
+            <string>1</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Layout_KM">
+         <item>
+          <widget class="QLabel" name="LabelKM">
+           <property name="styleSheet">
+            <string notr="true">font: 14px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string>Мощность двигателя (КМ)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="LineKM">
+           <property name="styleSheet">
+            <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="placeholderText">
+            <string>79</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Layout_KO">
+         <item>
+          <widget class="QLabel" name="LabelKO">
+           <property name="styleSheet">
+            <string notr="true">font: 14px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string>Количество лиц в страховке (КО)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="LineKO">
+           <property name="styleSheet">
+            <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="placeholderText">
+            <string>2</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Layout_KBC_V">
+         <item>
+          <widget class="QLabel" name="LabelKBC_V">
+           <property name="styleSheet">
+            <string notr="true">font: 14px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string>Возраст (КВС)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="LineKBC_V">
+           <property name="styleSheet">
+            <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>23</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Layout_KBC_S">
+         <item>
+          <widget class="QLabel" name="LabelKBC_S">
+           <property name="styleSheet">
+            <string notr="true">font: 14px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string>Стаж (КВС)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="LineKBC_S">
+           <property name="styleSheet">
+            <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>4</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="Layout_KC">
+         <item>
+          <widget class="QLabel" name="LabelKC">
+           <property name="styleSheet">
+            <string notr="true">font: 14px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="text">
+            <string>Длительность страховки (КС)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="LineKC">
+           <property name="styleSheet">
+            <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+           </property>
+           <property name="placeholderText">
+            <string>12</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="font">
+       <font>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="AdvaceWindow">
+         <property name="styleSheet">
+          <string notr="true">font: 12px Verdana;
+color: #335e89;</string>
+         </property>
+         <property name="markdown">
+          <string>Возможные советы
+
+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>934</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

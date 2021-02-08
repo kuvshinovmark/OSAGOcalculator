@@ -1,0 +1,11 @@
+adigeya 1.27
+ufa 1.72
+sochi 1.18
+kazan 1.90
+krasnodar 1.72
+moscow 1.90
+kaluga 1.18
+rostov 1.72
+tomsk 1.54
+tula 1.45
+peterburg 1.72
