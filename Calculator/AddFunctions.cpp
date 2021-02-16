@@ -46,6 +46,7 @@ void DesignForMess(QMessageBox &masBox){//функция для установк
                          );
     masBox.setWindowTitle("Внимание!");
     masBox.setWindowIcon(QIcon("img/error.png"));
+    //masBox.setWindowIcon(QIcon(":/resources/img/error.png"));
 }
 
 
@@ -156,6 +157,7 @@ bool CheckCorrectInput(Ui::MainWindow * ui){
 
 void DisplayingAdvice(Ui::MainWindow * ui, double Fsumma){
     QFile file("data/ForKM.txt");
+    //QFile file(":/information/data/ForKM.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Cannot open file for reading");
     }

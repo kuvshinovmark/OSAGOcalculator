@@ -6,6 +6,7 @@
 //#include <QTextCodec>
 double CalculationKM(double Power){
     QFile file("data/ForKM.txt");
+    //QFile file(":/information/data/ForKM.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Cannot open file for reading"); // если файл не найден, то выводим предупреждение и завершаем выполнение программы
         return 1;
@@ -64,6 +65,7 @@ double CalculationKO(int Koll){
 
 double CalculationKC(int KollMonths){
     QFile file("data/ForKC.txt");
+    //QFile file(":/information/data/ForKC.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Cannot open file for reading"); // если файл не найден, то выводим предупреждение и завершаем выполнение программы
         return 1;
@@ -92,6 +94,7 @@ double CalculationKC(int KollMonths){
 
 double CalculationKT(QString City){
     QFile file("data/ForKT.txt");
+    //QFile file(":/information/data/ForKT.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Cannot open file for reading"); // если файл не найден, то выводим предупреждение и завершаем выполнение программы
         return 1;
@@ -99,6 +102,7 @@ double CalculationKT(QString City){
     City = City.toLower();
     double output = 10;
     QTextStream in(&file);
+    in.setCodec("UTF-8");
     while(!in.atEnd()){
         QString line = in.readLine();
         QString Gorod, Mnoz;
@@ -115,6 +119,7 @@ double CalculationKT(QString City){
 
 double CalculationKBM(double Now, int Koll){
     QFile file("data/ForKBM.txt");
+    //QFile file(":/information/data/ForKBM.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Cannot open file for reading"); // если файл не найден, то выводим предупреждение и завершаем выполнение программы
         return 1;
@@ -163,6 +168,7 @@ double CalculationKBM(double Now, int Koll){
 
 double CalculationKBC(int Age, int Experience){
     QFile file("data/ForKBC.txt");
+    //QFile file(":/information/data/ForKBC.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Cannot open file for reading"); // если файл не найден, то выводим предупреждение и завершаем выполнение программы
         return 1;

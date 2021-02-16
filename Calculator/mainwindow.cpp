@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     Introduction q; //для вывода вступительного окна
     q.setWindowTitle("Instruction");
     q.setWindowIcon(QIcon("img/Icon.png"));
+    //q.setWindowIcon(QIcon(":/resources/img/Icon.png"));
     q.setModal(1);
     q.exec();
 
