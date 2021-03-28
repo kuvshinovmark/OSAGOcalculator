@@ -9,5 +9,9 @@
         <file>data/ForKT.txt</file>
         <file>data/ForKBM.txt</file>
         <file>data/ForKBC.txt</file>
+        <file>data/ForKTlist.txt</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>data/ForKTlist.txt</file>
     </qresource>
 </RCC>

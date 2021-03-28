@@ -31,7 +31,7 @@ void DesignForMess(QMessageBox &masBox){//функция для установк
     masBox.setStyleSheet("QMessageBox"
                          "{"
                          "background-color: #e6ebff;"
-                         "font: 18px Verdana;"
+                         "font: 18px;"
                          "text-align: center;"
                          "}"
                          "QPushButton"
@@ -55,18 +55,31 @@ bool CheckCorrectInput(Ui::MainWindow * ui){
     QString LineKM = ui->LineKM->text();
     QString LineKO = ui->LineKO->text();
     QString LineKC = ui->LineKC->text();
-    QString LineKT = ui->LineKT->text();
+//    QString LineKT = ui->LineKT->text();
     QString LineKBM_Now = ui->LineKBM_Now->text();
     if(LineKBM_Now[1]==',')LineKBM_Now.replace(1,1,'.');
     QString LineKBM_Koll = ui->LineKBM_Koll->text();
     QString LineKBC_Age = ui->LineKBC_V->text();
     QString LineKBC_Exp = ui->LineKBC_S->text();
     bool output = 0;
-    if((LineKM=="")||(LineBT== "")||(LineKO== "")||(LineKC== "")||(LineKT== "")||(LineKBM_Now== "")||(LineKBM_Koll== "")||(LineKBC_Age== "")||(LineKBC_Exp== "")){
+
+
+
+    if(ui->listWidget->currentItem()!=NULL){
+        std::cout<<(ui->listWidget->currentItem()->text()).toStdString()<<std::endl;
+    }else{
+        QMessageBox masBox;
+        DesignForMess(masBox);
+        masBox.setText("<font color=#335e89 face;>Пожалуйста, выберите город!</font>");
+        masBox.exec();
+        output = 1;
+    }
+
+    if((LineKM=="")||(LineBT== "")||(LineKO== "")||(LineKC== "")||(LineKBM_Now== "")||(LineKBM_Koll== "")||(LineKBC_Age== "")||(LineKBC_Exp== "")){
             output = 1;
             QMessageBox masBox;
             DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Пожалуйста, введите данные во все поля</font>");
+            masBox.setText("<font color=#335e89 face;>Пожалуйста, введите данные во все поля</font>");
             masBox.exec();
         }
         else{
@@ -75,7 +88,7 @@ bool CheckCorrectInput(Ui::MainWindow * ui){
             ui->LineKM->clear();
             QMessageBox masBox;
             DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Вводятся неверные данные для расчета коэффициента KM</font>");
+            masBox.setText("<font color=#335e89 face;>Вводятся неверные данные для расчета коэффициента KM</font>");
             masBox.exec();
         }
         if(!((LineKO.toInt()>=1)&&(LineKO.toInt()<=10))){
@@ -83,7 +96,7 @@ bool CheckCorrectInput(Ui::MainWindow * ui){
             ui->LineKO->clear();
             QMessageBox masBox;
             DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Вводятся неверные данные для расчета коэффициента KO</font>");
+            masBox.setText("<font color=#335e89 face;>Вводятся неверные данные для расчета коэффициента KO</font>");
             masBox.exec();
         }
         if(!((LineKC.toInt()>=1)&&(LineKC.toInt()<=100))){
@@ -91,32 +104,32 @@ bool CheckCorrectInput(Ui::MainWindow * ui){
             ui->LineKC->clear();
             QMessageBox masBox;
             DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Вводятся неверные данные для расчета коэффициента KC</font>");
+            masBox.setText("<font color=#335e89 face;>Вводятся неверные данные для расчета коэффициента KC</font>");
             masBox.exec();
         }
-        if((LineKT.contains(' '))||(LineKT.isEmpty())||(NumbersPerLine(LineKT))){
-            output = 1;
-            ui->LineKT->clear();
-            QMessageBox masBox;
-            DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Вводятся неверные данные для расчета коэффициента KT</font>");
-            masBox.exec();
-        }
-        if((CalculationKT(LineKT) == 10.0)&&!((LineKT.contains(' '))||(LineKT.isEmpty())||(NumbersPerLine(LineKT)))){//если функцияя для расчета не нашла город в файле + есди 1 проверка на воод прошла успешно
-            output = 1;
-            ui->LineKT->clear();
-            QMessageBox masBox;
-            DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Извините, такого города нет в базе. Пожалуйста, попробуйте ввести ближайший город или центр региона.</font>");
+//        if((LineKT.contains(' '))||(LineKT.isEmpty())||(NumbersPerLine(LineKT))){
+//            output = 1;
+//            ui->LineKT->clear();
+//            QMessageBox masBox;
+//            DesignForMess(masBox);
+//            masBox.setText("<font color=#335e89 face;>Вводятся неверные данные для расчета коэффициента KT</font>");
+//            masBox.exec();
+//        }
+//        if((CalculationKT(LineKT) == 10.0)&&!((LineKT.contains(' '))||(LineKT.isEmpty())||(NumbersPerLine(LineKT)))){//если функцияя для расчета не нашла город в файле + есди 1 проверка на воод прошла успешно
+//            output = 1;
+//            ui->LineKT->clear();
+//            QMessageBox masBox;
+//            DesignForMess(masBox);
+//            masBox.setText("<font color=#335e89 face;>Извините, такого города нет в базе. Пожалуйста, попробуйте ввести ближайший город или центр региона.</font>");
 
-            masBox.exec();
-        }
+//            masBox.exec();
+//        }
         if(!((LineKBM_Now.toDouble()>=0.5)&&(LineKBM_Now.toDouble()<=2.45))){
             output = 1;
             ui->LineKBM_Now->clear();
             QMessageBox masBox;
             DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Вводятся неверные данные для расчета коэффициента KBM в данный момент</font>");
+            masBox.setText("<font color=#335e89 face;>Вводятся неверные данные для расчета коэффициента KBM в данный момент</font>");
             masBox.exec();
         }
         if(!((LineKBM_Koll.toInt()>=1)&&(LineKBM_Koll.toInt()<=100))&&!(LineKBM_Koll=='0')){
@@ -124,7 +137,7 @@ bool CheckCorrectInput(Ui::MainWindow * ui){
             ui->LineKBM_Koll->clear();
             QMessageBox masBox;
             DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Вводятся неверные данные для расчета коэффициента KBM количества возмещений</font>");
+            masBox.setText("<font color=#335e89 face;>Вводятся неверные данные для расчета коэффициента KBM количества возмещений</font>");
             masBox.exec();
         }
         if(!((LineKBC_Age.toInt()>=16)&&(LineKBC_Age.toInt()<=150))){
@@ -132,7 +145,7 @@ bool CheckCorrectInput(Ui::MainWindow * ui){
             ui->LineKBC_V->clear();
             QMessageBox masBox;
             DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Вводятся неверные данные для расчета коэффициента KBC возраста</font>");
+            masBox.setText("<font color=#335e89 face;>Вводятся неверные данные для расчета коэффициента KBC возраста</font>");
             masBox.exec();
         }
         if(!((LineKBC_Exp.toInt()>=1)&&(LineKBC_Exp.toInt()<=150))&&!(LineKBC_Exp=='0')){
@@ -140,7 +153,7 @@ bool CheckCorrectInput(Ui::MainWindow * ui){
             ui->LineKBC_S->clear();
             QMessageBox masBox;
             DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Вводятся неверные данные для расчета коэффициента KBC опыта</font>");
+            masBox.setText("<font color=#335e89 face;>Вводятся неверные данные для расчета коэффициента KBC опыта</font>");
             masBox.exec();
         }
         if(!((LineBT.toInt()>=1)&&(LineBT.toInt()<=100000))){
@@ -148,7 +161,7 @@ bool CheckCorrectInput(Ui::MainWindow * ui){
             ui->LineBT->clear();
             QMessageBox masBox;
             DesignForMess(masBox);
-            masBox.setText("<font color=#335e89 face=Verdana;>Вводятся неверные данные для расчета коэффициента BT</font>");
+            masBox.setText("<font color=#335e89 face;>Вводятся неверные данные для расчета коэффициента BT</font>");
             masBox.exec();
         }
     }

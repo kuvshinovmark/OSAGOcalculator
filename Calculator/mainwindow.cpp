@@ -4,6 +4,11 @@
 #include "Calculation.h"
 #include "AddFunctions.h"
 #include <iostream>
+
+#include <QDebug>
+#include <QFile>
+#include <QTextStream>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -14,9 +19,21 @@ MainWindow::MainWindow(QWidget *parent)
     //q.setWindowIcon(QIcon(":/resources/img/Icon.png"));
     q.setModal(1);
     q.exec();
-
-
     ui->setupUi(this);
+//--------------------------------------------------
+//    QFile file(":/information/data/ForKT.txt");
+//    QFile file(":/information/data/ForKTlist.txt");
+    QFile file("data/ForKTlist.txt");
+    if (!file.open(QIODevice::ReadOnly)) {
+        qWarning("Cannot open file for reading"); // если файл не найден, то выводим предупреждение и завершаем выполнение программы
+    }
+    QTextStream in(&file);
+    while(!in.atEnd()){
+        QString line = in.readLine();
+        ui->listWidget->addItem(line);
+    }
+
+
 }
 MainWindow::~MainWindow()
 {
@@ -24,6 +41,9 @@ MainWindow::~MainWindow()
 }
 void MainWindow::on_ButtonForCount_clicked()
 {//Подсчет
+
+
+
     bool q = CheckCorrectInput(ui);//проверка на вменяемость данных, если данные некоректы (пока что только NULL, то подсчет не будет произведенн
     if(q==1){
         std::cout<<"V vivode NULL"<<std::endl;
@@ -41,8 +61,23 @@ void MainWindow::on_ButtonForCount_clicked()
         QString kc = ui->LineKC->text();
         double KC = CalculationKC(kc.toInt());
 
-        QString kt = ui->LineKT->text();
-        double KT = CalculationKT(kt);
+
+
+
+//        QString kt = ui->LineKT->text();
+        QString kt2 = ui->listWidget->currentItem()->text();
+//        if(kt==kt2){
+//            qDebug()<<"Y";
+//        }else{
+//            qDebug()<<"N "<<kt<<kt2;
+//        }
+//        std::cout<<
+//                    ui->statusbar->showMessage(kt2);
+        double KT = CalculationKT(kt2);
+
+
+
+
 
         QString kbm_now = ui->LineKBM_Now->text();
         QString kbm_koll = ui->LineKBM_Koll->text();
@@ -77,7 +112,7 @@ void MainWindow::on_ButtonForCount_clicked()
 
 void MainWindow::on_ButtonForErasing_clicked()
 {//обновление
-    ui->LineKT->clear();
+//    ui->LineKT->clear();
     ui->LineKBM_Now->clear();
     ui->LineKBM_Koll->clear();
     ui->LineKM->clear();
@@ -89,7 +124,5 @@ void MainWindow::on_ButtonForErasing_clicked()
     ui->ControlSumma->setText("Контрольная сумма");
     ui->ChecksumExplanation->setText("Пояснение контрольной суммы");
     ui->AdvaceWindow->setText("Возможные советы");
+    ui->listWidget->clearSelection();
 }
-void MainWindow::on_pushButton_clicked(){}
-void MainWindow::on_pushButton_2_clicked(){}
-void MainWindow::on_pushButton_3_clicked(){}

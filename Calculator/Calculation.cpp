@@ -93,27 +93,34 @@ double CalculationKC(int KollMonths){
 }
 
 double CalculationKT(QString City){
+    std::cout<<City.toStdString()<<std::endl;
     QFile file("data/ForKT.txt");
-    //QFile file(":/information/data/ForKT.txt");
+//    QFile file(":/information/data/ForKT.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Cannot open file for reading"); // если файл не найден, то выводим предупреждение и завершаем выполнение программы
         return 1;
     }
-    City = City.toLower();
+//    City = City.toLower();
     double output = 10;
     QTextStream in(&file);
     in.setCodec("UTF-8");
+
+    int i=0;
+
     while(!in.atEnd()){
         QString line = in.readLine();
         QString Gorod, Mnoz;
         Gorod = line.left(line.size()-5);
         Mnoz = line.right(4);
+//        std::cout<<"String = "<<line.toStdString()<<std::endl;
+//        std::cout<<"Gorod ="<<Gorod.toStdString()<<". "<<"Mnoz ="<<Mnoz.toStdString()<<"."<<std::endl;
         if(City == Gorod){
             output = Mnoz.toDouble();
+            break;
         }
-        //std::cout<<"String = "<<line.toStdString()<<std::endl;
-        //std::cout<<"Gorod ="<<Gorod.toStdString()<<". "<<"Mnoz ="<<Mnoz.toStdString()<<"."<<std::endl;
+        i++;
     }
+    std::cout<<"String = "<<City.toStdString()<<std::endl;
     return output;
 }
 

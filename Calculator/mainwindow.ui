@@ -148,18 +148,7 @@ color: #335e89;</string>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="LineKT">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 12px Verdana;
-color: #335e89;</string>
-           </property>
-           <property name="placeholderText">
-            <string>Moscow</string>
-           </property>
-          </widget>
+          <widget class="QListWidget" name="listWidget"/>
          </item>
         </layout>
        </item>
@@ -402,7 +391,7 @@ color: #335e89;</string>
      <x>0</x>
      <y>0</y>
      <width>934</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
